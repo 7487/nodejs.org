@@ -122,22 +122,27 @@ We chose Next.js because it is:
 ```
 nodejs.org/
 ├── apps/
-│   └── site/                    # Main website application
-│       ├── components/          # Website-specific React components
-│       ├── layouts/             # Page layout templates
-│       ├── pages/               # Content pages (Markdown/MDX)
-│       │   ├── en/              # English content (source)
-│       │   └── {locale}/        # Translated content
-│       ├── public/              # Static assets
-│       │   └── static/          # Images, documents, etc.
-│       ├── hooks/               # React hooks
-│       ├── providers/           # React context providers
-│       ├── types/               # TypeScript definitions
-│       ├── next-data/           # Build-time data fetching
-│       ├── scripts/             # Utility scripts
-│       ├── snippets/            # Code snippets for download page
-│       └── tests/               # Test files
-│           └── e2e/             # End-to-end tests
+│   ├── site/                    # Main website application
+│   │   ├── components/          # Website-specific React components
+│   │   ├── layouts/             # Page layout templates
+│   │   ├── pages/               # Content pages (Markdown/MDX)
+│   │   │   ├── en/              # English content (source)
+│   │   │   └── {locale}/        # Translated content
+│   │   ├── public/              # Static assets
+│   │   │   └── static/          # Images, documents, etc.
+│   │   ├── hooks/               # React hooks
+│   │   ├── providers/           # React context providers
+│   │   ├── types/               # TypeScript definitions
+│   │   ├── next-data/           # Build-time data fetching
+│   │   ├── scripts/             # Utility scripts
+│   │   ├── snippets/            # Code snippets for download page
+│   │   └── tests/               # Test files
+│   │       └── e2e/             # End-to-end tests
+│   ├── vercel/                  # Vercel deployment adapter
+│   │                            #   (analytics, instrumentation, vercel.json)
+│   └── cloudflare/              # Cloudflare deployment adapter
+│                                #   (worker entrypoint, image loader,
+│                                #    open-next.config.ts, wrangler.jsonc)
 └── packages/
     ├── ui-components/           # Reusable UI components
     │   ├── styles/             # Global stylesheets
@@ -145,10 +150,7 @@ nodejs.org/
     ├── i18n/                # Internationalization
     │   ├── locales/         # Translation files
     │   └── config.json      # Locale configuration
-    ├── rehype-shiki/        # Syntax highlighting plugin
-    ├── platform-vercel/     # Vercel platform adapter (analytics, instrumentation)
-    └── platform-cloudflare/ # Cloudflare platform adapter (worker entrypoint,
-                             # image loader, open-next config, wrangler config)
+    └── rehype-shiki/        # Syntax highlighting plugin
 ```
 
 ## Architecture Decisions
